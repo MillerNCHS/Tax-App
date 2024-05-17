@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&display=swap');
+
+.Income {
+  margin: 1rem;
+  padding: 4rem 4rem;
+  
+  flex-direction: column;
+}
+
+#logo {
+  position: absolute;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header div {
+  margin-top: -25px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo-left {
+    animation: App-logo-spin infinite 20s linear;
+  
+    
+  }
+  .App-logo-right {
+    animation: App-logo-spin infinite 20s lineasar;
+
+  }
+}
+
+
+.Income-header {
+  
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  display: inline-block;
+   vertical-align: middle;
+
+  
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+
+  h1{
+    flex: 1;
+   
+    font-family: 'Playfair Display', serif;
+    color: black; 
+    text-align: center;
+    justify-content: top center;
+    font-size: 80px;
+  }
+
+  table {
+    
+    border: 3px solid black;
+    width: 90vw; 
+    height: 500px; 
+    overflow: auto; 
+    height: 1000px;
+    border-collapse: collapse;
+  }
+  table thead th { position: sticky; 
+    
+    top: -.25em; 
+
+    z-index: 1; 
+    background-color: #74998c;
+  
+  .Tax-brackets{
+    overflow: auto; 
+    height: 1000px;
+  }s
+
+  th {
+    justify-content: top;
+    border: 2px solid black;
+  }
+  
+  td {
+    border: 2px solid black;
+  }
+  
+}}
+
+.Income-body {
+  display:inline-block;
+  vertical-align: top;
+  
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  display: inline-block;
+  vertical-align: middle;
+  width: 550px;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  padding: 8%;
+
+  #incomeStatement{
+    flex: 2;
+
+    font-family: 'Playfair Display', serif;
+   
+    color: white;
+    font-size: 40px;
+  }
+
+  #incomeStatement span {
+    color: #FFBF00;
+  }
+
+  label{
+    flex: 3;
+
+    font-family: 'Playfair Display', serif;
+    
+
+    font-size: 25x;
+  }
+ 
+ input {
+  flex: 2;
+  background-color: beige;
+  font-family: 'Playfair Display', serif;
+  color: black; 
+  text-align: center;
+  justify-content: right;
+  font-size: 25px;
+  width: 320px;
+  height: 50px;
+ }
+
+ select{
+  flex: 3;
+  background-color: beige;
+  font-family: 'Playfair Display', serif;
+  color: black; 
+  text-align: center;
+  justify-content: right;
+  font-size: 25px;
+  width: 320px;
+  height: 50px;
+
+  
+
+ }
+
+ StatusForm{
+
+  flex: 3;
+
+ }
+
+ button{
+
+  font-family: 'Playfair Display', serif;
+  color: black; 
+  height: 50px;
+  width: 75px;
+  top:-5px;
+  position: relative;
+}
+
+.spacing {
+  size:20px;
+}
+
+
+
+}
+
+
+
+
+
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
