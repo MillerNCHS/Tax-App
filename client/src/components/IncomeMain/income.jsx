@@ -8,7 +8,7 @@ let count = 0
 function Income(err, Result, Fields) {
   const [getTaxes, setTaxes] = useState([])
 
-  const baseURL = "http://localhost:2200/";
+  const baseURL = "https://tax.redhawks.us:2200/";
 
   useEffect(() => {
     fetch(`${baseURL}`)
@@ -69,9 +69,9 @@ function Income(err, Result, Fields) {
         
         changeBackgroundColor(Minimums[i], getStatus)
         if(i>6)
-          window.location = "http://localhost:3000/" + "#tax" + Minimums[i-3]
+          window.location = "https://tax.redhawks.us/" + "#tax" + Minimums[i-3]
         else
-          window.location = "http://localhost:3000/" + "#tax" + Minimums[i]
+          window.location = "https://tax.redhawks.us/" + "#tax" + Minimums[i]
         setTax(x)
         }
       else if(inc < 182100){
@@ -97,9 +97,9 @@ function Income(err, Result, Fields) {
         changeBackgroundColor(Minimums[i], getStatus)
         setTax(x)
         if(i>6)
-          window.location = "http://localhost:3000/" + "#tax" + Minimums[i-3]
+          window.location = "https://tax.redhawks.us/" + "#tax" + Minimums[i-3]
         else
-          window.location = "http://localhost:3000/" + "#tax" + Minimums[i]
+          window.location = "https://tax.redhawks.us/" + "#tax" + Minimums[i]
           
       }
           else if(inc < 182100){
@@ -125,9 +125,9 @@ function Income(err, Result, Fields) {
         }
         changeBackgroundColor(Minimums[i],getStatus)
         if(i>6)
-          window.location = "http://localhost:3000/" + "#tax" + Minimums[i-3]
+          window.location = "https://tax.redhawks.us/" + "#tax" + Minimums[i-3]
         else
-          window.location = "http://localhost:3000/" + "#tax" + Minimums[i]
+          window.location = "https://tax.redhawks.us/" + "#tax" + Minimums[i]
           setTax(x)
       }
           else if(inc < 190750){
@@ -155,9 +155,9 @@ function Income(err, Result, Fields) {
         }
         changeBackgroundColor(Minimums[i], getStatus)
         if(i>6)
-          window.location = "http://localhost:3000/" + "#tax" + Minimums[i-3]
+          window.location = "https://tax.redhawks.us/" + "#tax" + Minimums[i-3]
         else
-          window.location = "http://localhost:3000/" + "#tax" + Minimums[i]
+          window.location = "https://tax.redhawks.us/" + "#tax" + Minimums[i]
           
           setTax(x)
       }

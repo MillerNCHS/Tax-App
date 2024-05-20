@@ -3,7 +3,11 @@ const cors = require('cors');
 const csvtojson = require('csvtojson'); 
 
 const app = express();
-app.use(cors());
+app.use(cors(cors({
+  origin: ["https://tax.redhawks.us", "http://localhost:3000"],
+  methods: ["GET", "POST"],
+  credentials: true,
+})));
 app.use(express.json());
 
 
