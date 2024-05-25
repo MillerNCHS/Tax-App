@@ -8,7 +8,7 @@ let count = 0
 function Income(err, Result, Fields) {
   const [getTaxes, setTaxes] = useState([])
 
-  const baseURL = "https://tax.redhawks.us:2200/";
+  const baseURL = "https://tax.redhawks.us/data";
 
   useEffect(() => {
     fetch(`${baseURL}`)
@@ -181,10 +181,9 @@ function Income(err, Result, Fields) {
 
     return (
 
-      <body>
         <div className="Income">
       
-        <body className="Income-body">
+        <div className="Income-body">
             
             <StatusForm setStatus = {setStatus} setIncome = {setIncome}/>
             <br></br>
@@ -192,7 +191,7 @@ function Income(err, Result, Fields) {
             <Tax/>
             <p id="incomeStatement">Your tax amount is $<span>{getTax.toLocaleString()}</span></p>
 
-        </body>
+        </div>
           <header className="Income-header">
             
           <div className = "Tax-brackets" tabIndex="0">
@@ -227,7 +226,6 @@ function Income(err, Result, Fields) {
           </header>
          
         </div>
-      </body>
     );
   }
 

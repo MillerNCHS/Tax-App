@@ -1,17 +1,17 @@
 const express = require('express');
-const cors = require('cors');
 const csvtojson = require('csvtojson'); 
+const dotenv = require("dotenv");
+var path    = require("path");
+
+dotenv.config({ path: ".env" });
 
 const app = express();
-app.use(cors(cors({
-  origin: ["https://tax.redhawks.us", "http://localhost:3000"],
-  methods: ["GET", "POST"],
-  credentials: true,
-})));
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
 
 
-const mysql = require('mysql2'); 
+const mysql = require('mysql2');
+
 const connection = mysql.createConnection({
   host: process.env.HOST,
   user: process.env.DB_USER, 
@@ -76,13 +76,21 @@ connection.connect(function(err) {
 }); 
 
 */
-app.get('/', (req, res) => {
+
+
+
+app.get('/data', (req, res) => {
     const sql = 'SELECT Min, Max, HeadHousehold, Single, MarriedSeperately, MarriedJointly FROM Tax'; 
     connection.query(sql, (err, data) => {
         if (err) return res.json(err);  
+        
         return res.json(data); 
       })
 })
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 
 

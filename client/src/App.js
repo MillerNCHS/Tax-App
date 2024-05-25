@@ -26,7 +26,7 @@ async function postData(url = "", data = {}) {
 
 function App() {
 
-  const baseURL = "https://tax.redhawks.us:2200/";
+  const baseURL = "https://tax.redhawks.us/data";
   const[incomes, setIncomes] = useState([]); 
   useEffect(() => {
     fetch(`${baseURL}`)
