@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const csvtojson = require('csvtojson'); 
 const dotenv = require("dotenv");
 var path    = require("path");
@@ -6,6 +7,7 @@ var path    = require("path");
 dotenv.config({ path: ".env" });
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -81,10 +83,10 @@ connection.connect(function(err) {
 
 app.get('/data', (req, res) => {
     const sql = 'SELECT Min, Max, HeadHousehold, Single, MarriedSeperately, MarriedJointly FROM Tax'; 
-    connection.query(sql, (err, data) => {
-        if (err) return res.json(err);  
-        
-        return res.json(data); 
+    connection.query(sql, (err, data) => { 
+      if (err) 
+        return res.json(err);
+      return res.json(data);
       })
 })
 

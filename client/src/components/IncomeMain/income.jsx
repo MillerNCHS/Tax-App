@@ -8,7 +8,9 @@ let count = 0
 function Income(err, Result, Fields) {
   const [getTaxes, setTaxes] = useState([])
 
-  const baseURL = "https://tax.redhawks.us/data";
+  //const baseURL = "https://tax.redhawks.us:2200/data";
+  //const baseURL = "http://localhost:2200/data";
+  const baseURL = "./tables.json"
 
   useEffect(() => {
     fetch(`${baseURL}`)
