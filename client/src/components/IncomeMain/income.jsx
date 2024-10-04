@@ -35,10 +35,10 @@ function Income(err, Result, Fields) {
     return ([
         <p key={idx}>{data.Min}</p>,
         <p key={idx}>{data.Max}</p>,
-        <p key={idx}>{data.HeadHousehold}</p>,
         <p key={idx}>{data.Single}</p>,
-        <p key={idx}>{data.MarriedSeperately}</p>,
         <p key={idx}>{data.MarriedJointly}</p>,
+        <p key={idx}>{data.MarriedSeperately}</p>,
+        <p key={idx}>{data.HeadHousehold}</p>,
         Minimums.push(data.Min),
         Maximums.push(data.Max),
         Head.push(data.HeadHousehold),
@@ -203,10 +203,10 @@ function Income(err, Result, Fields) {
               <th>Minimum Income</th>
               <th>Maximum Income</th>
               <th></th>
-              <th>Head of Household</th>
               <th>Single</th>
-              <th>Married Filing Seperately</th>
               <th>Married Filing Jointly</th>
+              <th>Married Filing Seperately</th>
+              <th>Head of Household</th>
             </tr>
             </thead>
             <tbody>
@@ -216,10 +216,10 @@ function Income(err, Result, Fields) {
                 <td> {numberWithCommas(income.Min)} </td>
                 <td> {numberWithCommas(income.Max)} </td>
                 <td> </td>
-                <td> {numberWithCommas(income.HeadHousehold)} </td>
                 <td> {numberWithCommas(income.Single)} </td>
-                <td> {numberWithCommas(income.MarriedSeperately)} </td>
                 <td> {numberWithCommas(income.MarriedJointly)} </td>
+                <td> {numberWithCommas(income.MarriedSeperately)} </td>
+                <td> {numberWithCommas(income.HeadHousehold)} </td>
               </tr>
             ))}
             </tbody>
@@ -266,10 +266,10 @@ function Income(err, Result, Fields) {
             <label for = "Household Status">What is your household status?</label>
           <select id = "Household_Status" value={getS} onChange={SValue}>
             <option id = "blank" value=""></option>
-            <option id = "Head_of_Household" value="Head">Head of Household</option>
             <option id = "Single" value="Single">Single</option>
-            <option id = "Married_Filing_Seperately" value="Separately">Married filing separately</option>
-            <option id = "Married_Filing_Jointly" value="Jointly">Married filing jointly</option>
+            <option id = "Married_Filing_Jointly" value="Jointly">Married Filing Jointly</option>
+            <option id = "Married_Filing_Seperately" value="Separately">Married Filing Separately</option>
+            <option id = "Head_of_Household" value="Head">Head of Household</option>
           
             
           </select>
@@ -292,13 +292,13 @@ function Income(err, Result, Fields) {
     x.querySelector("#tax"+number).style.backgroundColor = color;
     
     if (status == "Head")
-      x.querySelector("#tax"+number+" td:nth-child(4)").style.backgroundColor = "red";
+      x.querySelector("#tax"+number+" td:nth-child(7)").style.backgroundColor = "red";
     else if (status == "Single")
-      x.querySelector("#tax"+number+" td:nth-child(5)").style.backgroundColor = "red";
+      x.querySelector("#tax"+number+" td:nth-child(4)").style.backgroundColor = "red";
     else if (status == "Separately")
       x.querySelector("#tax"+number+" td:nth-child(6)").style.backgroundColor = "red";
     else if (status == "Jointly")
-      x.querySelector("#tax"+number+" td:nth-child(7)").style.backgroundColor = "red";
+      x.querySelector("#tax"+number+" td:nth-child(5)").style.backgroundColor = "red";
     
     if(count2 > 1){  
 
